@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+	{% for user in users.items %}
+		<article class="media content-section">
+			<img class="rounded-circle article-img mr-3" src="{{ url_for('static', filename='profile_pics/' + user.image_file) }}">
+			<div class="media-body">
+				<div class="article-metadata">
+					<a class="mr-5" href="#">{{ user.username }}</a>
+					<small class="text-muted">{{ user.date_created.strftime('%d-%m-%Y') }}</small>
+					<h2><a class="text-muted" href="#">{{ user.email }}</a></h2>
+					<p class="article-content">{{ content }}</p>
+				</div>
+			</div>
+		</article>
+	{% endfor %}
+	{% for page_num in users.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+		{% if page_num %}
+			{% if users.page == page_num %}
+				<a class="btn btn-info mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
+			{% else %}
+				<a class="btn btn-outline-info mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
+			{% endif %}
+		{% else %}
+			...
+		{% endif %}
+	{% endfor %}
+{% endblock content %}
+
