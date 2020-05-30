@@ -7,8 +7,7 @@ class Config(object):
     """
 
     # Put any configurations here that are common across all environments
-
-
+    
 class DevelopmentConfig(Config):
 	"""
 	Development configurations
@@ -25,9 +24,11 @@ class DevelopmentConfig(Config):
 	MAIL_USERNAME = os.environ.get('EMAIL_USER')
 	MAIL_PASSWORD = os.environ.get('EMAIL_PASS')
 
-	SECRET_KEY = os.environ.get('SECRET_KEY')
-	SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
+	#SECRET_KEY = os.environ.get('SECRET_KEY')
+	#SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
 	
+	SECRET_KEY = '8f1eb85917a0cee05fecac007d23664f'
+	SQLALCHEMY_DATABASE_URI = 'sqlite:///members.db'
 	
 
 class ProductionConfig(Config):

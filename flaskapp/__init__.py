@@ -22,7 +22,7 @@ mail = Mail()
 def create_app(config_name):  #config_class=Config):
 	app = Flask(__name__)
 	app.config.from_object(app_config[config_name])
-	app.config.from_pyfile('config.py')
+	#app.config.from_pyfile('config.py')
 
 	db.init_app(app)
 	bcrypt.init_app(app)
