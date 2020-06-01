@@ -21,14 +21,9 @@ class DevelopmentConfig(Config):
 	MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS')
 
 
-	MAIL_USERNAME = os.environ.get('EMAIL_USER')
-	MAIL_PASSWORD = os.environ.get('EMAIL_PASS')
+	#MAIL_USERNAME = os.environ.get('MAIL_USER')
+	#MAIL_PASSWORD = os.environ.get('MAIL_PASS')
 
-	#SECRET_KEY = os.environ.get('SECRET_KEY')
-	#SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
-	
-	SECRET_KEY = '8f1eb85917a0cee05fecac007d23664f'
-	SQLALCHEMY_DATABASE_URI = 'sqlite:///members.db'
 	
 
 class ProductionConfig(Config):

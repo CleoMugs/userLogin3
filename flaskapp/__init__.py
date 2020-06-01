@@ -6,23 +6,22 @@ from flask_login import LoginManager
 from flask_mail import Mail
 #from flaskapp.config import Config
 from config import app_config
-from flaskapp import config
+#from flaskapp import config
 
 
 db = SQLAlchemy()
 bcrypt = Bcrypt()
 login_manager = LoginManager()
 login_manager.login_view = 'users.login'
-#login_manager.login_message = 'You must be logged in to access this page'
 login_manager.login_message_category = 'info'
 
 mail = Mail()
 
 
-def create_app(config_name):  #config_class=Config):
-	app = Flask(__name__)
+def create_app(config_name): 
+	app = Flask(__name__, instance_relative_config=True)
 	app.config.from_object(app_config[config_name])
-	#app.config.from_pyfile('config.py')
+	app.config.from_pyfile('config.py')
 
 	db.init_app(app)
 	bcrypt.init_app(app)
