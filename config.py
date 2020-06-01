@@ -38,7 +38,7 @@ class TestingConfig(Config):
 	Production configurations
 	"""
 
-	#TESTING = True
+	TESTING = True
 	
 
 
