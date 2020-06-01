@@ -19,9 +19,16 @@ login_manager.login_message_category = 'info'
 mail = Mail()
 
 def create_app(config_name): 
-	app = Flask(__name__, instance_relative_config=True)
-	app.config.from_object(app_config[config_name])
-	app.config.from_pyfile('config.py')
+	if os.getenv('FLASK_ENV') == "production":
+		app = Flask(__name__)
+		app.config.update(SECRET_KEY=os.getenv('SECRET_KEY'),
+			SQLALCHEMY_DATABASE_URI=os.getenv('SQLALCHEMY_DATABASE_URI')
+		)
+
+	else:
+		app = Flask(__name__, instance_relative_config=True)
+		app.config.from_object(app_config[config_name])
+		app.config.from_pyfile('config.py')
 
 	db.init_app(app)
 	bcrypt.init_app(app)
