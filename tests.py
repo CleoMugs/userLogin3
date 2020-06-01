@@ -13,13 +13,14 @@ class TestCase(TestCase):
 	def create_app(self):
 		config_name = 'testing'
 		app = create_app(config_name)
-		app.config.update(SQLALCHEMY_DATABASE_URI = 'sqlite:///members_test.db')
+		#app.config.update(SQLALCHEMY_DATABASE_URI = 'sqlite:///members_test.db')
+		app.config.update(SQLALCHEMY_DATABASE_URI = 'mysql://cleo:123@localhost/members_test')
 
 		return app
 
 	def setUp(self):
 		db.create_all()
-		admin = User(username="admin", email="admin@admin.com", password="admin123")
+		admin = User(username="admin", email="ausers;dmin@admin.com", password="admin123")
 		user = User(username="Cleo", email="okinda@gmail.com", password="123")
 
 		db.session.add(admin)
