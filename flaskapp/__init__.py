@@ -11,6 +11,8 @@ from config import app_config
 
 
 db = SQLAlchemy()
+
+
 bcrypt = Bcrypt()
 login_manager = LoginManager()
 login_manager.login_view = 'users.login'
@@ -41,6 +43,8 @@ def create_app(config_name):
 	mail.init_app(app)
 
 	migrate = Migrate(app, db)
+	
+	from flaskapp import models
 
 
 	from flaskapp.users.views import users
