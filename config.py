@@ -50,3 +50,4 @@ app_config = {
 }
 
 
+#export SQLALCHEMY_DATABASE_URI='mysql://Cleo:kakosh123@Cleo.mysql.pythonanywhere-services.com/Cleo$members'

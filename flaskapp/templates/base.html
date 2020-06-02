@@ -21,7 +21,7 @@
 	<header class="site-header">
 		<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand mr-4" href="/">Cleo Inc Project</a>
+				<a class="navbar-brand mr-4" href="/">NaiTalkBkog</a>
 		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>	
@@ -47,7 +47,7 @@
 	</header>
 
 	<main role="main" class="container-fluid">
-		<div class="row">
+		<div class="row justify-content-center">
 			<div class="col-md-8">
 				{% with messages = get_flashed_messages(with_categories=true) %}
 					{% if messages %}
@@ -60,7 +60,7 @@
 				{% endwith %}
 				{% block content %}{% endblock content %}
 			</div>
-			<div class="col-md-4">
+			<!--div class="col-md-4">
 				<div class="content-section">
 					<h3>Cleo Inc Sidebar </h3>
 					<p class="text-muted">The following is what the app is capable of</p>
@@ -72,7 +72,7 @@
 						<li class="list-group-item list-group-item-light">Users can Logout</li>
 					</ul>
 				</div>
-			</div>	
+			</div--->	
 		</div>
 	</main>
 	<footer class="page-footer font-small special-color-dark pt-4">

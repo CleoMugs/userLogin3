@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 {% block content %}
 	{% for user in users.items %}
 		<article class="media content-section">
@@ -7,7 +7,7 @@
 				<div class="article-metadata">
 					<a class="mr-5" href="#">{{ user.username }}</a>
 					<small class="text-muted">{{ user.date_created.strftime('%d-%m-%Y') }}</small>
-					<h2><a class="text-muted" href="#">{{ user.email }}</a></h2>
+					<h4><a class="text-muted" href="#">{{ user.email }}</a></h4>
 					<p class="article-content">{{ content }}</p>
 				</div>
 			</div>
